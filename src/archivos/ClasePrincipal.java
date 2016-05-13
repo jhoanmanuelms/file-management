@@ -1,6 +1,7 @@
 package archivos;
 
-import archivos.gui.FileInfo;
+import archivos.gui.TranslatorGUI;
+
 import javax.swing.JFrame;
 
 /**
@@ -17,11 +18,11 @@ public class ClasePrincipal
      */
     public static void main(String args[])
     {
-        JFrame frame = new JFrame("FileInfo");
-        frame.setContentPane(new FileInfo().getMainPanel());
+        JFrame frame = new JFrame("Translator");
+        frame.setContentPane(new TranslatorGUI().getMainPanel());
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
-        frame.setSize(800, 600);
+        frame.setSize(280, 125);
         frame.setVisible(true);
         frame.setResizable(false);
     }
