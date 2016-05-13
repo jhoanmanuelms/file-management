@@ -1,6 +1,6 @@
 package archivos;
 
-import archivos.gui.TranslatorGUI;
+import archivos.gui.FileEditor;
 
 import javax.swing.JFrame;
 
@@ -18,11 +18,11 @@ public class ClasePrincipal
      */
     public static void main(String args[])
     {
-        JFrame frame = new JFrame("Translator");
-        frame.setContentPane(new TranslatorGUI().getMainPanel());
+        JFrame frame = new JFrame("Hyper Editor");
+        frame.setContentPane(new FileEditor().getMainPanel());
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
-        frame.setSize(280, 125);
+        frame.setSize(400, 600);
         frame.setVisible(true);
         frame.setResizable(false);
     }

@@ -3,7 +3,9 @@ package archivos.reader;
 import javax.swing.JOptionPane;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.PrintStream;
 import java.io.RandomAccessFile;
 
 /**
@@ -24,6 +26,16 @@ public class FileController
     public FileController(String fileName)
     {
         file = new File(fileName);
+    }
+
+    /**
+     * Inicializa el controlador con el archivo entregado.
+     *
+     * @param file Archivo que sera manejado por el controlador.
+     */
+    public FileController(File file)
+    {
+        this.file = file;
     }
 
     /**
@@ -102,5 +114,30 @@ public class FileController
         }
 
         return fileContent.toString();
+    }
+
+    /**
+     * Guarda el contenido entregado como parametro en el archivo.
+     *
+     * @param fileContent Contenido a guardar.
+     */
+    public void save(String fileContent)
+    {
+        try
+        {
+            PrintStream printStream = new PrintStream(new FileOutputStream(file));
+            printStream.println(fileContent);
+            printStream.flush();
+            printStream.close();
+        }
+        catch (FileNotFoundException fne)
+        {
+            JOptionPane.showMessageDialog(
+                null,
+                "El archivo no existe",
+                "ERROR EN ARCHIVO",
+                JOptionPane.ERROR_MESSAGE);
+            fne.printStackTrace();
+        }
     }
 }
