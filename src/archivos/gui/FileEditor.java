@@ -57,7 +57,8 @@ public class FileEditor
             JFileChooser fileChooser = new JFileChooser();
             int selection = fileChooser.showOpenDialog(mainPanel);
 
-            if (selection == JFileChooser.APPROVE_OPTION) {
+            if (selection == JFileChooser.APPROVE_OPTION)
+            {
                 fileController = new FileController(fileChooser.getSelectedFile());
                 fileController.save(fileContent.getText());
             }
