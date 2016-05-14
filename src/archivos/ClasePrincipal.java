@@ -3,6 +3,8 @@ package archivos;
 import archivos.gui.FileEditor;
 
 import javax.swing.JFrame;
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
 
 /**
  * Clase principal de la aplicacion.
